@@ -23,7 +23,6 @@ class ForumDB extends DB {
     public function paginate($page, $table, $amount) {
         return parent::paginate($page, $table, $amount);
     }
-
 }
 
 /*
