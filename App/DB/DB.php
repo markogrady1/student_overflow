@@ -175,7 +175,7 @@ class DB {
      */
     public function paginate($page,$table, $amount){
         $page=htmlspecialchars($page);
-        $stmt = $this->dbConnection->prepare("SELECT * FROM $table ORDER BY id DESC LIMIT ".($page * $amount).", $amount");
+        $stmt = $this->dbConnection->prepare("SELECT * FROM $table ORDER BY id ASC LIMIT ".($page * $amount).", $amount");
         $stmt->execute();
         $result = $stmt -> fetchAll();
 //        this section of the function is not being used yet
@@ -187,7 +187,6 @@ class DB {
 
         return $result;
     }
-
 
 }
 
